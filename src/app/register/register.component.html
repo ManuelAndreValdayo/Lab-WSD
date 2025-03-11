@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="registerContainer">
+        <div class="contentRegister">
+            <h2>Register</h2>
+            <form [formGroup]="formRegister">
+                <div class="txtContainer" #nameContainer>
+                    <label for="txtName"><span>*</span>NAME</label>
+                    <input [ngClass]="{'invalidInput': !isNameValid}" type="text" id="txtName" name="txtName" placeholder="Introduce your name" formControlName="strName" required>
+                </div>
+                <div class="txtContainer" #surnameContainer>
+                    <label for="txtSurname"><span>*</span>SURNAMES</label>
+                    <input [ngClass]="{'invalidInput': !isSurnamesValid}" type="text" id="txtSurname" name="txtSurname" placeholder="Introduce your surnames" formControlName="strSurnames" required>
+                </div>
+                <div class="txtContainer" #emailContainer>
+                    <label for="txtEmail"><span>*</span>EMAIL</label>
+                    <input [ngClass]="{'invalidInput': !isEmailValid}" type="text" id="txtEmail" name="txtEmail" placeholder="Introduce your email" formControlName="strEmail" required>
+                </div>
+                <div class="txtContainer" #usernameContainer>
+                    <label for="txtUsername"><span>*</span>USERNAME</label>
+                    <input [ngClass]="{'invalidInput': !isUsernameValid}" type="text" id="txtUsername" name="txtUsername" placeholder="Introduce your username" formControlName="strUsername" required>
+                </div>
+                <div class="txtContainer" #passwordContainer>
+                    <label for="txtPassword"><span>*</span>PASSWORD</label>
+                    <input [ngClass]="{'invalidInput': !isPasswordValid}" type="password" name="txtPassword" id="txtPassword" placeholder="Introduce your password" formControlName="strPassword" required>
+                    <p *ngIf="!isPasswordLength">At least 8 or more characters</p>
+                    <p *ngIf="!isPasswordUppercase">includes Uppercase</p>
+                    <p *ngIf="!isPasswordLowercase">includes Lowecase</p>
+                    <p *ngIf="!isPasswordNumber">includes Numbers</p>
+                </div>
+                <div class="txtContainer" #confirmPasswordContainer>
+                    <label for="txtConfirmPassword"><span>*</span>CONFIRM PASSWORD</label>
+                    <input [ngClass]="{'invalidInput': !isPassword2Valid}" type="password" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Confirm you password" formControlName="strPassword2" required>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary" (click)="register()">Register</button>
+        </div>
+    </div>
+</div>

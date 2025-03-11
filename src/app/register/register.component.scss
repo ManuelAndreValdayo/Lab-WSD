@@ -1,0 +1,27 @@
+.container{
+    position: fixed;
+    left: calc(50% - 180px);
+    top: calc(37% - 273.61px);
+    padding: 30px;
+    width: 20rem;
+}
+
+.txtContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.txtContainer{
+    input{
+        padding: 10px;
+    }
+    p{
+        color: red;
+        margin: 0px;
+    }
+}
+
+.invalidInput{
+    border: 2px solid red;
+}
