@@ -1,0 +1,144 @@
+@import '../../styles.scss';
+
+.container{
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/imgFondo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 70%;
+
+}
+
+.navigator{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to left, $primary-color, #ffffff);
+}
+.contentBlockNav{
+  display: flex;
+  margin-right: 1rem;
+}
+
+.blockNav > a{
+  color: black;
+  text-decoration: none;
+  margin: 0 2rem;
+  font-size: 1.3rem;
+}
+.blockNav > a::after{
+  content: "";
+  margin-left: 15px;
+  position: fixed;
+  width: 5rem;
+  height: 1.5px;
+  background: white;
+  display: block;
+  top: 4.7rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+
+}
+#nav2::after{
+  margin-left: 22px;
+
+}
+.blockNav > a:hover{
+  color: white;
+  cursor: pointer;
+}
+
+.blockNav > a:hover::after{
+  transform: scaleX(1);
+}
+.navLogo{
+  font-size: 2rem;
+    /* text-decoration-thickness: 2px; */
+  font-weight: bold;
+  margin: 2rem;
+  // color: #5AECC7;
+}
+
+
+.writing {
+  white-space: nowrap; /* Para que el texto no se rompa */
+  overflow: hidden; /* Ocultar texto que aún no se muestra */
+  display: inline-block;
+  border-right: 2px solid #ffffff; /* Cursor parpadeante */
+  animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+  from, to {
+      border-color: transparent;
+  }
+  50% {
+      border-color: #ffffff;
+  }
+}   
+#contenidoInicio{
+  position: absolute;
+  top: 13rem;
+  color: white;
+  margin-left: 4vw;
+  transition: opacity 1s;
+}
+#parrafo-1{
+  font-size: 25px;
+}
+#parrafo-2{
+  font-size: 48px;
+  margin: 0px;
+}
+#parrafo-3{
+  font-size: 36px;
+  margin: 0px;
+}
+
+
+// Boton pulsar
+#cv{
+  opacity: 0;
+}
+.pulse{
+  position: absolute;
+  top: 26rem;
+  color: white;
+  margin-left: 4vw;
+  background: $primary-color;
+  padding: 0px 30px 0 30px;
+  font-size: 20px;
+  // opacity: 0;
+  transition: opacity 1s;
+}
+.pulse > p{
+  color: $secondary-color;
+}
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+.pulse {
+    --color: #a2f4e0;
+    --hover: #a5f5e1;
+}
+
+// 

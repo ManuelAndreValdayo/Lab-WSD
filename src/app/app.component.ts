@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from './register/register.component';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,23 @@ import { RegisterComponent } from './register/register.component';
 export class AppComponent {
   title = 'Lab-WSD';
   
-  constructor(private router:Router) { }  
+  constructor(private router:Router, private userService: UserService) { }  
 
   ngOnInit() {
-    this.router.navigate(['/Register']);
+    // this.router.navigate(['/Index']);
     // this.router.events.subscribe(event => {
     // });
+    // this.userService.checkLogin().subscribe(
+    //   (Response: any) => {
+    //     console.log(Response);
+    //     if(Response != ""){
+    //       this.router.navigate(['/Index']);
+    //     }
+    //   },
+    //   (error: any) => {
+    //     this.router.navigate(['/Login']);
+    //   }
+    // );
   }
 
 }

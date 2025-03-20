@@ -1,0 +1,36 @@
+@import '../../styles.scss';
+
+.panel{
+    width: 100%;
+    height: 100%;
+}
+
+.panelContent{
+    position: fixed;
+    width: 12rem;
+    height: 100%;
+    background: $primary-color;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    h1{
+        margin-left: 1rem;
+    }
+}
+
+.panelSections{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 3rem;
+}
+.panelSection{
+    color: black;
+    margin: 0.8rem 0;
+    i{
+        margin-right: 1rem;
+    }
+}
+.panelSection:hover{
+    color: white;
+    cursor: pointer;
+}

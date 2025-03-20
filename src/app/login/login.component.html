@@ -1,23 +1,25 @@
-<div class="container">
-    <div class="loginContainer">
-        <div class="contentLogin">
-            <h2>Login</h2>
-            <form>
-                <div class="txtContainer">
-                    <label for="txtUsername">USERNAME</label>
-                    <input type="text" id="txtUsername" name="txtUsername" required>
-                </div>
-                <div class="txtContainer">
-                    <label for="txtPassword">PASSWORD</label>
-                    <input type="password" name="txtPassword" id="txtPassword">
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-        </div>
 
+<form [formGroup]="formLogin">
+    <div class="container">
+        <div class="loginContainer">
+            <div class="contentLogin">
+                <h2>Login</h2>
+                    <div class="txtContainer">
+                        <label for="txtUsername">USERNAME</label>
+                        <input [ngClass]="{'invalidInput': isUserNameInvalid}" type="text" id="txtUsername" name="txtUsername" formControlName="strUserName" required>
+
+                    </div>
+                    <div class="txtContainer">
+                        <label for="txtPassword">PASSWORD</label>
+                        <input [ngClass]="{'invalidInput': isPasswordInvalid}" type="password" name="txtPassword" id="txtPassword" formControlName="strPassword" required>
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+            </div>
+    
+        </div>
     </div>
-</div>
+</form>

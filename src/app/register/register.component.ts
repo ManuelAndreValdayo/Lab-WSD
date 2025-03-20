@@ -40,17 +40,14 @@ export class RegisterComponent {
   register(item: any = ""): void {
     if(this.validate()){
       this.userService.register(
-        this.formRegister.value.strName,
-        this.formRegister.value.strSurnames,
-        this.formRegister.value.strUsername,
         this.formRegister.value.strEmail,
         this.formRegister.value.strPassword,
-        this.formRegister.value.strPassword2
+        this.formRegister.value.strName,
+        this.formRegister.value.strSurnames,
+        this.formRegister.value.strUsername
       ).subscribe(
-        ok => {
-          console.log('Registro exitoso', ok);
-    
-          Swal.fire({
+        ok => {  
+            Swal.fire({
             title: 'Registro exitoso',
             text: '¡Tu registro se ha completado correctamente!',
             icon: 'success',
@@ -61,13 +58,21 @@ export class RegisterComponent {
           });
         },
         error => {
-          console.error('Error en el registro', error);
-          Swal.fire({
-            title: 'Error',
-            text: 'Hubo un error al registrar. Por favor, inténtalo de nuevo.',
-            icon: 'error',
-            confirmButtonText: 'OK'
-          });
+          if(error.status === 409){
+            Swal.fire({
+              title: 'Error',
+              text: 'The email or username is already registered.',
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+          }else{
+            Swal.fire({
+              title: 'Error',
+              text: 'There was an error registering. Please try again.',
+              icon: 'error',
+              confirmButtonText: 'OK'
+            }); 
+          }
         }
       );
     }

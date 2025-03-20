@@ -1,9 +1,15 @@
+@import '../../styles.scss';
+
 .container{
     position: fixed;
     left: calc(50% - 180px);
-    top: calc(37% - 273.61px);
+    top: calc(37% - 227.61px);
     padding: 30px;
     width: 20rem;
+    border-radius: 10px;
+    background: $primary-color;
+    /* inset: 10px 10px; */
+    box-shadow: 15px 18px #4fa58f;
 }
 
 .txtContainer{
@@ -15,13 +21,12 @@
 .txtContainer{
     input{
         padding: 10px;
+        border-radius: 5px;
+        border: 0px;
+        background: #ffffff85;
     }
     p{
         color: red;
         margin: 0px;
     }
-}
-
-.invalidInput{
-    border: 2px solid red;
 }

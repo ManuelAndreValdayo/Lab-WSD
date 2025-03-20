@@ -6,20 +6,33 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-    private apiUrl = "http://localhost:5000/auth";
+    private apiUrl = "http://localhost:5000/user";
 
     constructor(private http: HttpClient) { }
 
-    register(email :  any, pwd1 : any, pwd2 : any, nombre : any, apellidos : any, telefono : any) {
+    register(email :  any, pwd1 : any, name : any, surnames : any, username : any) {
         let info = {
-          Email : email,
-          Pwd1 : pwd1, 
-          Pwd2 : pwd2,
-          Nombre: nombre,
-          Apellidos: apellidos,
-          Telefono: telefono
+          email : email,
+          password : pwd1, 
+          name: name,
+          surnames: surnames,
+          username: username
         }
         return this.http.post<any>(`${this.apiUrl}/register`, info);
     }
+    login(username :  any, pwd : any) {
+        let info = {
+          username : username,
+          password : pwd
+        }
+        return this.http.post<any>(`${this.apiUrl}/login`, info, { responseType: 'text' as 'json', withCredentials : true});
+    }
+    checkLogin() : any{
+        const token = (localStorage.getItem('access_token')) ? localStorage.getItem('access_token') : "";
+        const headers = {
+            "Authorization" : `Bearer ${token}`
+        }
+        return this.http.get<any>(`${this.apiUrl}/checkLogin`, { headers });
 
+    }
 }
