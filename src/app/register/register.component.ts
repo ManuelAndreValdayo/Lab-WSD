@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, NgClass } from '@angular/common';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 
@@ -25,7 +26,7 @@ export class RegisterComponent {
   isPasswordLowercase = true;
   isPasswordNumber = true;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
   
   formRegister = new FormGroup({
     strName: new FormControl(''),
@@ -54,6 +55,7 @@ export class RegisterComponent {
             confirmButtonText: 'OK'
           }).then((result) => {
             if (result.isConfirmed) {
+              this.router.navigate(['/Panel']);
             }
           });
         },
