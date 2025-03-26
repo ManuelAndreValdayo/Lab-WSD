@@ -1,0 +1,34 @@
+
+<form action="" [formGroup]="cardForm" (ngSubmit)="submit()">
+    <div class="cardSection">
+        <div class="cardText">
+            <h3>CARD</h3>
+        </div>
+        <div class="cardInfo">
+            <div class="cardContent">
+                <div class="bloqueCard">
+                    <label for="txtCardName">NAME</label>
+                    <input formControlName="cardName" type="text" name="txtCardName" id="txtCardName" value="Manuel Andre Valdayo Bricaud" placeholder="Antonio Martín Pérez" >
+                    <small *ngIf="cardForm.controls['cardName'].invalid && cardForm.controls['cardName'].touched">Número inválido</small>
+                </div>
+                <div div class="bloqueCard">
+                    <label for="txtCardName">CARD NUMBER</label>
+                    <input formControlName="cardNumber" type="text" id="txtCardNumber" placeholder="0000 0000 0000 0000" (input)="formatCardNumber($event)" maxlength="19">
+                    <small *ngIf="cardForm.controls['cardNumber'].invalid && cardForm.controls['cardNumber'].touched">Nombre inválido</small>
+                </div>
+            </div>
+            <div class="flex">
+                <div div class="bloqueCard">
+                    <label for="txtCardCvv">CVV</label>
+                    <input formControlName="cvv" type="number" name="txtCardCvv" id="txtCardCvv" placeholder="123" maxlength="3">
+                </div>
+                <div div class="bloqueCard">
+                    <label for="txtCardDate">EXPIRY DATE</label>
+                    <input formControlName="expiryDate" type="month" name="txtCardDate" id="txtCardDate" value="12/21">
+                </div>
+            </div>
+            <div class="button">ADD CARD</div>
+        </div>
+    </div>
+
+</form>

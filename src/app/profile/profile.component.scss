@@ -1,0 +1,61 @@
+@import '../../styles.scss';
+
+.content{
+    margin: 2rem;
+    display: flex;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 5px 5px #00000029;
+}
+
+.profileText{
+    margin: 2rem;
+}
+.profileSection{
+    @extend .content;
+    img{
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        margin: 1rem;
+    }
+
+    .profileInfo{
+        #txtName{
+            font-size: 1rem;
+            font-weight: bold;
+            color: $secondary-color;
+        }
+    }
+
+}
+.personalInformation{
+    @extend .content;
+    flex-direction: column;
+    padding: 0rem 2rem;
+    h4{
+        margin: 0rem 1rem 0rem 0rem;
+    }
+    .info{
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+        p{
+            margin: 0;
+        }
+    }
+    .headerInformation{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $secondary-color;
+    }
+}
+.contentInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.personalAddress{
+    @extend .content;
+}

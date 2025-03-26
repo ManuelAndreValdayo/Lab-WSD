@@ -4,7 +4,7 @@
         <div class="panelSections">
             <div class="panelSection">
                 <i class="fa-solid fa-user"></i>
-                <a class="section" routerLink="/panel" routerLinkActive="active">Profile</a>
+                <a class="section" href="/Panel/Profile" routerLinkActive="active">Profile</a>
             </div>
             <div class="panelSection">
                 <i class="fa-solid fa-dollar-sign"></i>
@@ -12,7 +12,7 @@
             </div>
             <div class="panelSection">
                 <i class="fa-solid fa-money-check"></i>
-                <a class="section" routerLink="/panel/products" routerLinkActive="active">Card</a>
+                <a class="section" href="/Panel/Card" routerLink="/panel/products" routerLinkActive="active">Card</a>
             </div>
             <div class="panelSection">
                 <i class="fa-solid fa-gear"></i>
@@ -20,5 +20,7 @@
             </div>
         </div>
     </div>
-
+    <div class="sectionLoader">
+        <router-outlet></router-outlet>
+    </div>
 </div>

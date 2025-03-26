@@ -47,7 +47,9 @@ export class RegisterComponent {
         this.formRegister.value.strSurnames,
         this.formRegister.value.strUsername
       ).subscribe(
-        ok => {  
+        (response): any => {
+          if(response != ""){
+            localStorage.setItem('access_token', response.access_token);
             Swal.fire({
             title: 'Registro exitoso',
             text: '¡Tu registro se ha completado correctamente!',
@@ -55,9 +57,10 @@ export class RegisterComponent {
             confirmButtonText: 'OK'
           }).then((result) => {
             if (result.isConfirmed) {
-              this.router.navigate(['/Panel']);
+              this.router.navigate(['/Panel/Profile']);
             }
           });
+          }  
         },
         error => {
           if(error.status === 409){

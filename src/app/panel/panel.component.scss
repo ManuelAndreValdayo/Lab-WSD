@@ -1,12 +1,13 @@
 @import '../../styles.scss';
 
 .panel{
+    display: flex;
     width: 100%;
     height: 100%;
+    background: #5aecc73d;
 }
 
 .panelContent{
-    position: fixed;
     width: 12rem;
     height: 100%;
     background: $primary-color;
@@ -33,4 +34,16 @@
 .panelSection:hover{
     color: white;
     cursor: pointer;
+    a{
+        color: white;
+    }
+}
+
+.section{
+    text-decoration: none;
+    color: black;
+}
+
+.sectionLoader{
+    width: calc(100% - 12rem);
 }

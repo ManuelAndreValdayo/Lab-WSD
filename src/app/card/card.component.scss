@@ -1,0 +1,66 @@
+@import '../../styles.scss';
+
+.flex{
+    display: flex;
+}
+
+.content{
+    margin: 2rem;
+    display: flex;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 5px 5px #00000029;
+}
+.cardSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .cardInfo{
+        @extend .content;
+        width: max-content;
+        flex-direction: column;
+        padding: 1rem;
+        input{
+            margin: 0.5rem 1rem;
+            background: #e9e9e9;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem;
+        }
+        input:focus-visible{
+            outline: 2px solid $secondary-color;
+        }
+        .cardContent{
+            display: flex;
+            flex-direction: column;
+
+            small{
+                margin-left: 1rem;
+                color: red;
+            }
+        }
+        .bloqueCard{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            label{
+                margin-left: 1rem;
+            }
+        }
+        .button{
+            padding: 0.5rem;
+            text-align: center;
+            background: $primary-color;
+            margin: 1rem;
+            border-radius: 5px;
+        }
+        .button:hover{
+            background: $terciary-color;
+            cursor: pointer;
+        }
+    }
+    .cardText{
+        width: calc(100% - 4rem);
+        margin: 2rem;
+    }
+}

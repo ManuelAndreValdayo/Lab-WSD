@@ -41,6 +41,7 @@ export class LoginComponent {
             confirmButtonText: 'OK'
           }).then((result) => {
             if (result.isConfirmed) {
+              this.router.navigate(['/Panel/Profile']);
             }
           });
         },
@@ -53,7 +54,6 @@ export class LoginComponent {
               confirmButtonText: 'OK'
             }).then((result) => {
               if (result.isConfirmed) {
-                this.router.navigate(['/Panel']);
               }
             });
           }else{
