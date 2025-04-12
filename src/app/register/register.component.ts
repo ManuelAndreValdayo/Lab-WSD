@@ -7,11 +7,10 @@ import Swal from 'sweetalert2';
 
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgClass, CommonModule],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+    selector: 'app-register',
+    imports: [FormsModule, ReactiveFormsModule, NgClass, CommonModule],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
   isNameValid = true;
