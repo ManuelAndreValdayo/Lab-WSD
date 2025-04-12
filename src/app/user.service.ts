@@ -35,4 +35,12 @@ export class UserService {
         return this.http.get<any>(`${this.apiUrl}/checkLogin`, { headers });
 
     }
+    getProfile() : any{
+        const token = (localStorage.getItem('access_token')) ? localStorage.getItem('access_token') : "";
+        const headers = {
+            "Authorization" : `Bearer ${token}`
+        }
+        return this.http.get<any>(`${this.apiUrl}/getUser`, { headers });
+
+    }
 }

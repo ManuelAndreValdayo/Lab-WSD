@@ -1,5 +1,9 @@
 @import '../../styles.scss';
 
+input:focus-visible{
+    outline: 2px solid $secondary-color;
+}
+
 .container{
     position: fixed;
     left: calc(50% - 180px);

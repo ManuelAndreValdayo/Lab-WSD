@@ -57,7 +57,7 @@ export class RegisterComponent {
             confirmButtonText: 'OK'
           }).then((result) => {
             if (result.isConfirmed) {
-              this.router.navigate(['/Panel/Profile']);
+              this.router.navigate(['/Panel/Profile']); 
             }
           });
           }  

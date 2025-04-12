@@ -56,10 +56,11 @@ export class IndexComponent {
     this.userService.checkLogin().subscribe(
       (Response: any) => {
         if(Response != ""){
-          this.router.navigate(['/Panel']);
+          this.router.navigate(['/Panel/Profile']);
         }
       },
       (error: any) =>{
+        console.log(error);
         this.router.navigate(['/Login']);
       }
     );

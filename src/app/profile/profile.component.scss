@@ -1,5 +1,15 @@
 @import '../../styles.scss';
 
+input{
+    margin: 0.5rem 1rem;
+    background: #e9e9e9;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+input:focus-visible{
+    outline: 2px solid $secondary-color;
+}
 .content{
     margin: 2rem;
     display: flex;
@@ -54,8 +64,36 @@
 .contentInfo{
     display: flex;
     flex-direction: column;
+    width: 33%;
+
+    .textInfo{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        
+        .label{
+            margin-left: 1rem;
+        }
+    }
 }
 
 .personalAddress{
     @extend .content;
+    @extend .personalInformation;
+}
+
+.profileContainer{
+    display: flex;
+
+    .profileSection{
+        width: 20%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0px;
+
+    }
+    .profileDetails{
+        width: 80%;
+    }
 }

@@ -7,6 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { PanelComponent } from './panel/panel.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CardComponent } from './card/card.component';
+import { AuthResolver } from './resolvers/auth.resolver';
+
+
 
 export const routes: Routes = [
     { path: 'Register', component: RegisterComponent },
@@ -15,10 +18,19 @@ export const routes: Routes = [
     { path: 'Index', component: IndexComponent},
     { path: 'Panel', component: PanelComponent,
         children: [
-            { path: 'Profile', component: ProfileComponent },
-            { path: 'Card', component: CardComponent }
-        ]
-    }
+            { 
+                path: 'Profile', 
+                resolve: { auth: AuthResolver },
+                component: ProfileComponent 
+            },
+            { 
+                path: 'Card', 
+                resolve: { auth: AuthResolver },
+                component: CardComponent 
+            }
+        ], resolve: { auth: AuthResolver }
+    },
+    { path: '**', redirectTo: 'Index', pathMatch: 'full' }
 
 
 ];
